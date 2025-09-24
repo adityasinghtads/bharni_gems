@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharni Jewels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #111111;
+            --text-color: #EAEAEA;
+            --text-muted-color: #A0A0A0;
+            --header-bg: rgba(17, 17, 17, 0.8);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --btn-primary-bg: #FFFFFF;
+            --btn-primary-text: #111111;
+            --btn-primary-hover-bg: #CCCCCC;
+            --btn-secondary-hover-bg: rgba(255, 255, 255, 0.1);
+        }
+
+        body.light-theme {
+            --bg-color: #F5F5F5;
+            --text-color: #111111;
+            --text-muted-color: #525252;
+            --header-bg: rgba(245, 245, 245, 0.8);
+            --border-color: rgba(0, 0, 0, 0.1);
+            --btn-primary-bg: #111111;
+            --btn-primary-text: #FFFFFF;
+            --btn-primary-hover-bg: #333333;
+            --btn-secondary-hover-bg: rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .font-serif-elegant {
+            font-family: 'Lora', serif;
+        }
+
+        .image-parallax-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .parallax-image {
+            position: absolute;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            opacity: 0.3; /* This keeps the images faint */
+        }
+        .parallax-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-color);
+        }
+        .btn-secondary:hover {
+            background-color: var(--btn-secondary-hover-bg);
+        }
+        .btn-primary {
+            background-color: var(--btn-primary-bg);
+            color: var(--btn-primary-text);
+        }
+        .btn-primary:hover {
+            background-color: var(--btn-primary-hover-bg);
+        }
+
+        .text-muted {
+            color: var(--text-muted-color);
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <div id="parallax-container" class="image-parallax-container">
+        <div class="parallax-image" data-speed="-0.2" style="top: 10%; left: 5%; width: 200px; height: 300px;">
+            <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=600&auto=format&fit=crop" alt="Inspiration image 1">
+        </div>
+        <div class="parallax-image" data-speed="0.1" style="top: 20%; right: 8%; width: 250px; height: 180px;">
+            <img src="https://images.unsplash.com/photo-1494783367193-149034c05e8f?q=80&w=600&auto=format&fit=crop" alt="Inspiration image 2">
+        </div>
+        <div class="parallax-image" data-speed="0.3" style="top: 55%; left: 15%; width: 180px; height: 250px;">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=600&auto=format&fit=crop" alt="Inspiration image 3">
+        </div>
+        <div class="parallax-image" data-speed="-0.1" style="top: 70%; right: 12%; width: 300px; height: 220px;">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=600&auto=format&fit=crop" alt="Inspiration image 4">
+        </div>
+        <div class="parallax-image" data-speed="0.2" style="bottom: -20%; left: 25%; width: 220px; height: 320px;">
+            <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?q=80&w=600&auto=format&fit=crop" alt="Inspiration image 5">
+        </div>
+         <div class="parallax-image" data-speed="-0.3" style="bottom: -15%; right: 5%; width: 200px; height: 280px;">
+            <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=600&auto=format&fit=crop" alt="Inspiration image 6">
+        </div>
+    </div>
+
+    <div class="relative z-10">
+        <header class="header sticky top-0 z-50">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <div class="flex items-center space-x-4 md:space-x-8">
+                    <a href="#" class="text-xl font-bold tracking-wider">Bharni Jewels</a>
+                    <nav class="hidden md:flex items-center space-x-6 text-sm text-muted">
+                        <a href="#" class="hover:text-[var(--text-color)] transition">Manifesto</a>
+                        <a href="#" class="hover:text-[var(--text-color)] transition">Careers</a>
+                        <a href="#" class="hover:text-[var(--text-color)] transition">Discover</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button id="theme-toggle" class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500">
+                        <svg id="theme-toggle-sun" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                        <svg id="theme-toggle-moon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    </button>
+                    <a href="#" class="btn btn-secondary">Log In</a>
+                    <a href="#" class="btn btn-primary">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="min-h-screen flex flex-col items-center justify-center text-center px-4 -mt-16">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-serif-elegant font-medium leading-tight">
+                    Bharni Jewels
+                </h1>
+                <p class="mt-4 text-lg text-muted">
+                    One home to save text, links, and media.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const parallaxContainer = document.getElementById('parallax-container');
+            const parallaxImages = document.querySelectorAll('.parallax-image');
+
+            // --- Parallax on Scroll ---
+            window.addEventListener('scroll', () => {
+                const scrollY = window.pageYOffset;
+                parallaxImages.forEach(image => {
+                    const speed = parseFloat(image.getAttribute('data-speed'));
+                    image.style.transform = `translateY(${scrollY * speed}px)`;
+                });
+            });
+
+            // --- Subtle Mouse Move Effect ---
+            document.addEventListener('mousemove', (e) => {
+                const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+                const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+                if (parallaxContainer) {
+                   parallaxContainer.style.transform = `translateX(${-x * 30}px) translateY(${-y * 30}px)`;
+                }
+            });
+
+            // --- Theme Toggling ---
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const sunIcon = document.getElementById('theme-toggle-sun');
+            const moonIcon = document.getElementById('theme-toggle-moon');
+
+            const applyTheme = (theme) => {
+                if (theme === 'light') {
+                    document.body.classList.add('light-theme');
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                } else {
+                    document.body.classList.remove('light-theme');
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                }
+            };
+
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else if (prefersDark) {
+                applyTheme('dark');
+            } else {
+                applyTheme('light');
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                const isLight = document.body.classList.toggle('light-theme');
+                const newTheme = isLight ? 'light' : 'dark';
+                localStorage.setItem('theme', newTheme);
+                applyTheme(newTheme);
+            });
+        });
+    </script>
+
+</body>
+</html>
